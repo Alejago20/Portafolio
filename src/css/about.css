@@ -1,0 +1,32 @@
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto 1fr; /* Ajusta para que el contenido ocupe el espacio necesario */
+    gap: 8px;
+    height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
+    z-index: 20;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .div1 {
+    grid-column: span 5;
+    z-index: 100; /* Asegura que esté en un nivel adecuado sobre otros elementos */
+  }
+  
+  .div2 {
+    grid-column: span 5;
+    grid-row-start: 2; /* Coloca este div en la segunda fila de la cuadrícula */
+    background-color: aqua;
+    position: fixed;
+    padding: 16px;
+    z-index: 200; /* Asegura que esté por encima del fondo pero debajo del menú */
+    /* Ajusta los valores si es necesario para que quede visible */
+    top: 300%;
+    left: 0;
+  }
+  
