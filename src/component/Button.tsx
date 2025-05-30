@@ -21,8 +21,8 @@ export default function Buttones() {
       <Button
         variant="contained"
         endIcon={<DownloadIcon />}
-        href="/download/Cv_HojadevidaAlejandraG.pdf"
-        download="Cv_HojadevidaAlejandraG.pdf"
+        href="/download/Cv_HojadevidaAlejandraG_.pdf"
+        download="Cv_HojadevidaAlejandraG_.pdf"
         sx={{
           backgroundColor: '#6A6789',
           color: 'white',
