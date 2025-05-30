@@ -15,7 +15,7 @@ const projects: Project[] = [
   {
     id: 1,
     title: 'Tienda Celulares 2024',
-    image: '/public/images/proyecto.png',
+    image: 'images/proyecto.png',
     link: 'https://celularesbara.netlify.app/',
   },
 ];
