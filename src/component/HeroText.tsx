@@ -20,11 +20,11 @@ const WelcomeMessage: React.FC<HeroProps> = ({ message }) => {
         position: 'fixed',
         zIndex: 10,
         color: 'white',
-        fontSize: '1.3rem',
+        fontSize: '1.5rem',
         textAlign: 'left',
         top: topValue,
-        left: '4%',
-        fontWeight: '200',
+        left: '2%',
+        fontWeight: '300',
         fontFamily: 'system-ui',
       }}
     >

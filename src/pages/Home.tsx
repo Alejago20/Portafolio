@@ -5,6 +5,7 @@ import ParticlesBackground from '../component/ParticlesBackground';
 import "../App.css";
 import AnimatedText from "../component/AnimatedText";
 import WelcomeMessage from "../component/HeroText";
+import Nave from '../component/Nave';
 
 
 const Home: React.FC = () => {
@@ -18,6 +19,7 @@ const Home: React.FC = () => {
  
     <DrawerAppBar />
     <ParticlesBackground/>
+    <Nave/>
      
 
     

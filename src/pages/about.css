@@ -1,0 +1,68 @@
+/* ---------------------------------------------------------------------------- */
+/* 1) .content-container: mantiene el z-index más alto para el texto (título + párrafo) */
+/* ---------------------------------------------------------------------------- */
+.content-container {
+  position: relative;
+  z-index: 2;            /* Debe quedar por encima de las partículas */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* ------------------------------------------------------------------------------ */
+/* 2) .floating-computer-container: posición absoluta con top y z-index elevados  */
+/* ------------------------------------------------------------------------------ */
+.floating-computer-container {
+  position: absolute;     /* Nos posicionamos respecto al <div class="relative h-screen"> */
+  top: 60%;               /* Ajusta este porcentaje para que quede justo debajo del texto */
+  left: 50%;              /* Pone el punto de referencia horizontal en la mitad */
+  transform: translateX(-50%); /* Centra horizontalmente el contenedor */
+  z-index: 3;             /* Superior a particles (z-index 1) y content-container (z-index 2)? 
+                              Ajusta según el orden que quieras: 
+                              si lo quieres encima del texto, pon aquí 4 o más. */
+  /* No hace falta flex aquí, pues usamos left+transform para centrar */
+}
+
+/* --------------------------------------------------------- */
+/* 3) .floating-computer: tamaño, opacidad y filtro de blur   */
+/* --------------------------------------------------------- */
+.floating-computer {
+  width: 300px;        /* Cambia este valor al ancho que mejor encaje en tu diseño */
+  height: auto;
+  opacity: 0.18;       /* Muy tenue para no competir con el texto */
+  color: #ffffff;      /* currentColor = blanco para stroke/texto del SVG */
+  filter: blur(2px);   /* Suaviza bordes; reduce o quita si crees que queda muy difuso */
+}
+
+/* -------------------------------------------------------------- */
+/* 4) Media Queries: ajustes para tabletas y móviles                */
+/* -------------------------------------------------------------- */
+
+/* Tablets (hasta 768px de ancho) */
+@media (max-width: 768px) {
+  .floating-computer {
+    width: 200px;      /* Reducimos un poco el ancho en tablets */
+    opacity: 0.12;     /* Aún más tenue si es necesario */
+    filter: blur(1.5px);
+  }
+  .content-container {
+    padding: 3rem 0.8rem;
+  }
+  /* Ajustamos el top si el texto en tablets ocupa más (por ejemplo, pasa de 60% a 65%) */
+  .floating-computer-container {
+    top: 65%;
+  }
+}
+
+/* Móviles (hasta 480px de ancho) */
+@media (max-width: 480px) {
+  .floating-computer-container {
+    /* O bien desaparece en móviles pequeños para garantizar legibilidad */
+    display: none;
+  }
+  .content-container {
+    padding: 2rem 0.6rem;
+  }
+}
