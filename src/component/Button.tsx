@@ -1,4 +1,3 @@
-
 import { Button, Stack } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 
@@ -12,9 +11,9 @@ export default function Buttones() {
         zIndex: 400,
         left: '4%',
         top: {
-          xs: '80%',  // móviles pequeños bajan más
-          sm: '75%',  // móviles grandes/tablets
-          md: '62%',  // desktop y superior
+          xs: '63%',  // móviles: justo abajo de un logo de ~50% alto
+          sm: '49%',  // tablets: tu logo es un poco más pequeño
+          md: '55%',  // desktop: ajusta según imagen
         },
       }}
     >

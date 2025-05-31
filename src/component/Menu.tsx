@@ -14,7 +14,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Ricardosalinas from "../assets/Ricardo salinas.jpg";
+import Ricardosalinas from '../assets/Ricardo salinas.jpg';
 
 interface Props {
   window?: () => Window;
@@ -39,7 +39,18 @@ export default function DrawerAppBar(props: Props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }} />
+      {/* Logo en el drawer para móviles */}
+      <Box
+        component="img"
+        src={Ricardosalinas}
+        alt="Logo"
+        sx={{
+          height: 50,
+          width: 'auto',
+          marginY: 2,
+        }}
+      />
+      <Typography variant="h6" sx={{ my: 0 }} />
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -81,20 +92,17 @@ export default function DrawerAppBar(props: Props) {
         }}
       >
         <Toolbar>
+          {/* Logo en AppBar: opacidad y blend ajustados según breakpoint */}
           <Box
             component="img"
             src={Ricardosalinas}
             alt="Logo"
             sx={{
-              height: {
-                xs: 50,  // En móviles
-                sm: 70,  // Tablets
-                md: 80   // Escritorio
-              },
+              height: { xs: 50, sm: 70, md: 80 },
               width: 'auto',
               marginRight: 2,
-              opacity: 0.9,
-              mixBlendMode: 'multiply',
+              opacity: { xs: 1, sm: 0.9 },
+              mixBlendMode: { xs: 'normal', sm: 'multiply' },
             }}
           />
           <Typography variant="h6" sx={{ color: '#1976d2' }} />
@@ -129,9 +137,7 @@ export default function DrawerAppBar(props: Props) {
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true,
-          }}
+          ModalProps={{ keepMounted: true }}
           sx={{
             display: { xs: 'block', sm: 'none' },
             '& .MuiDrawer-paper': {
